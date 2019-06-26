@@ -1,6 +1,6 @@
-package com.hjbz.nxxm.module.login.dao;
+package com.hjbz.nxxm.module.users.dao;
 
-import com.hjbz.nxxm.module.login.entity.UserInfo;
+import com.hjbz.nxxm.module.users.entity.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 

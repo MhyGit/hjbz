@@ -1,4 +1,4 @@
-package com.hjbz.nxxm.module.login.entity;
+package com.hjbz.nxxm.module.users.entity;
 
 import lombok.Data;
 
