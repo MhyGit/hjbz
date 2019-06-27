@@ -100,6 +100,20 @@
         <artifactId>spring-boot-starter-data-redis</artifactId>
       </dependency>
 
+      <!--SpringBoot集成shiro-->
+      <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-spring</artifactId>
+        <version>1.4.0</version>
+      </dependency>
+
+      <!-- aop依赖 -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+      </dependency>
+
+
 
     </dependencies>
 
