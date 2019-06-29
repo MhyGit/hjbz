@@ -6,17 +6,18 @@
 	<!-- 根据手机号查找用户-->
 	<select id="findUserByPhone" resultType="com.hjbz.nxxm.module.users.entity.UserInfo" parameterType="java.lang.String">
 		select
-			id,
+			id uid,
 			username,
-			pwd password,
-			phone,
-			age,
-			sex,
-			email,
-			address,
-			create_time createTime
-		from h_user_info
-		where phone = #{phone}
+			telephone phone,
+			mail email,
+			password pwd,
+			dept_id deptId,
+			status,
+			remark,
+			operator,
+			operator_time operatorTime
+		from hjbz_user
+		where telephone = #{phone}
     </select>
 
 

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>登录页面</title>
-    <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.2.4.js"></script>
 </head>
 <body>
     <div>
         <div>
             <div>
-                <div><span>手机:</span><input type="text"></div>
-                <div><span>密码:</span><input type="password"></div>
+                <div><span>手机:</span><input type="text" id="phone"></div>
+                <div><span>密码:</span><input type="password" id="pwd"></div>
             </div>
             <div>
                 <div><button type="button" onclick="login()">登录</button></div>
@@ -21,12 +21,17 @@
 <script type="text/javascript">
 
     function login(){
-        alert("进入登录的js方法");
         $.ajax({
-            url: 'www.baidu.com',
-            type: 'GET',
+            url: '/login/userLogin',
+            type: 'POST',
+            data:{
+                phone:$('#phone').val(),
+                pwd:$('#pwd').val()
+            },
             success:function (o) {
-                alert('成功了');
+                if (o.code == 1) {//根据返回值进行跳转
+                    window.location.href = '/login/goSuccess';
+                }
             },
             error:function (o) {
                 alert('错误');

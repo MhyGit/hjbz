@@ -1,17 +1,19 @@
 package com.hjbz.nxxm.module.users.entity;
 
 import lombok.Data;
+import org.apache.shiro.crypto.hash.Md5Hash;
 
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 
 /**
  * 用户基本信息实体类
  */
-//@Data
+@Data
 public class UserInfo implements Serializable {
 
 	private static final long serialVersionUID = 959379713790495505L;
@@ -26,6 +28,9 @@ public class UserInfo implements Serializable {
 
 	/**用户密码**/
 	private String pwd;
+
+	/**所属部门id**/
+	private Integer doptId;
 
 	/**加密密码用的盐**/
 	private String salt;
@@ -43,7 +48,7 @@ public class UserInfo implements Serializable {
 	private String signature;
 
 	/**生日**/
-	private Date birthday;
+	private LocalDateTime birthday;
 
 	/**地址**/
 	private String address;
@@ -52,13 +57,19 @@ public class UserInfo implements Serializable {
 	private String createName;
 
 	/**创建时间**/
-	private Date createTime;
+	private LocalDateTime createTime;
 
-	/**修改人名称**/
-	private String updateName;
+	/**操作者**/
+	private String operator;
 
-	/**更新时间**/
-	private Date updateTime;
+	/**操作时间**/
+	private LocalDateTime operatorTime;
+
+	/**操作者ip**/
+	private String operatorIp;
+
+	/**备注**/
+	private String remark;
 
 
 	/**
@@ -69,5 +80,11 @@ public class UserInfo implements Serializable {
 		return this.username+this.salt;
 	}
 
+
+	public static void main(String[] args) {
+		Md5Hash hash = new Md5Hash("123456","laoma");
+		System.out.println(hash.toString());
+
+	}
 
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+</head>
+<body>
+
+    <div>
+        <!--/*@thymesVar id="username" type=""*/-->
+        <h3 th:text="'欢迎您：' + ${session.username}"></h3>
+        <p>
+            你好！
+        </p>
+        <p>如果你看到这:<span th:text="${session.phone}" />,你的密码是:<span th:text="${session.pwd}" />,你的邮箱是:<span th:text="${session.email}" /></p>
+    </div>
+
+</body>
+</html>
