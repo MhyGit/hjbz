@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中国地图</title>
+    <!--引入jquery文件-->
+    <script type="text/javascript" src="/js/jquery-2.2.4.js"></script>
+    <!-- 引入 ECharts 文件 -->
+    <script type="text/javascript" src="/js/echarts.min.js"></script>
+    <!-- 引入自定义js文件 -->
+    <script type="text/javascript" src="/js/map/chinaMap.js"></script>
+
+    <style type="text/css">
+        #form{
+            width: 100%;
+            height: 100%;
+        }
+        .from_span{
+            margin:10px 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="width: 900px; height: 50px; margin: 0 auto;">
+        <form  id="form" method="post">
+            <span class="from_span">开始时间:<input type="date" name="sssj" value="2019-01-01"/></span>
+            <span class="from_span">结束时间:<input type="date" name="jssj" value="2019-07-01"/></span>
+            <span class="from_span">关系类型:
+                <select>
+                    <option value ="1">购进</option>
+                    <option value ="0">销售</option>
+                </select>
+            </span>
+        </form>
+    </div>
+    <!--存储地图的容器-->
+    <div id="myMap" style="width: 900px; height: 700px; border: 1px solid red; margin: 0 auto;"></div>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

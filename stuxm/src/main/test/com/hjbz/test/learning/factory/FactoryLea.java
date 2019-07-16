@@ -14,4 +14,10 @@ package com.hjbz.test.learning.factory;
  *
  */
 public class FactoryLea {
+
+
+
+
+
+
 }

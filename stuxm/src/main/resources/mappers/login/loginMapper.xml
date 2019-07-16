@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.hjbz.nxxm.module.users.dao.LoginMapper">
+<mapper namespace="com.hjbz.stuxm.module.users.dao.LoginMapper">
 
 	<!-- 根据手机号查找用户-->
-	<select id="findUserByPhone" resultType="com.hjbz.nxxm.module.users.entity.UserInfo" parameterType="java.lang.String">
+	<select id="findUserByPhone" resultType="com.hjbz.stuxm.module.users.entity.UserInfo" parameterType="java.lang.String">
 		select
 			id uid,
 			username,
@@ -19,6 +19,26 @@
 		from hjbz_user
 		where telephone = #{phone}
     </select>
+
+
+	<!--根据用户名查找用户-->
+	<select id="findUserByUsername" resultType="com.hjbz.stuxm.module.users.entity.UserInfo" parameterType="java.lang.String">
+		select
+			id uid,
+			username,
+			telephone phone,
+			mail email,
+			password pwd,
+			dept_id deptId,
+			status,
+			remark,
+			operator,
+			operator_time operatorTime
+		from hjbz_user
+		where username = #{username}
+	</select>
+
+
 
 
 

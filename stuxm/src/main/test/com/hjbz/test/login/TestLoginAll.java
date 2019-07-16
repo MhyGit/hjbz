@@ -1,13 +1,9 @@
 package com.hjbz.test.login;
 
-import com.hjbz.nxxm.StuxmApp;
-import com.hjbz.nxxm.module.users.dao.LoginMapper;
-import com.hjbz.nxxm.module.users.entity.UserInfo;
-import com.hjbz.nxxm.module.users.service.LoginService;
-import com.hjbz.nxxm.module.users.shiro.MyShiroRealm;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
+import com.hjbz.stuxm.StuxmApp;
+import com.hjbz.stuxm.module.users.dao.LoginMapper;
+import com.hjbz.stuxm.module.users.entity.UserInfo;
+import com.hjbz.stuxm.module.users.service.LoginService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +22,6 @@ public class TestLoginAll {
 	@Resource(name = "loginService")
 	private LoginService loginService;
 
-	@Resource
-	private MyShiroRealm myShiroRealm;
 
 	@Test
 	public void testFindUserByPhone(){
@@ -35,6 +29,11 @@ public class TestLoginAll {
 		System.out.println(userInfo);
 	}
 
+	@Test
+	public void testFindUserByUsername(){
+		UserInfo userInfo = loginMapper.findUserByUsername("admin");
+		System.out.println(userInfo);
+	}
 
 
 
