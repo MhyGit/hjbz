@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * 后端响应前端的实体类
@@ -29,13 +30,13 @@ public class MsgInfo implements Serializable {
 	private Object data;
 
 	/**响应时间**/
-	private LocalDate repTime;
+	private LocalDateTime repTime;
 
 
 	public MsgInfo() {
 	}
 
-	public MsgInfo(Integer code, String msg, Object data, LocalDate repTime) {
+	public MsgInfo(Integer code, String msg, Object data, LocalDateTime repTime) {
 		this.code = code;
 		this.msg = msg;
 		this.data = data;

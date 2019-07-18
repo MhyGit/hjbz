@@ -41,15 +41,15 @@ public class UserLoginController {
 	public MsgInfo userLogin(UserInfo userInfo, HttpServletRequest request){
 		MsgInfo msgInfo = null;
 		if (userInfo == null){
-			return new MsgInfo(MsgInfo.ERROR_CODE,"参数为空...",null,LocalDate.from(LocalDateTime.now()));
+			return new MsgInfo(MsgInfo.ERROR_CODE,"参数为空...",null,LocalDateTime.now());
 		}
 
 		UserInfo user = loginService.findUserByPhone(userInfo.getPhone());
 		if (user == null){
-			return new MsgInfo(MsgInfo.ERROR_CODE,"用户不存在...",null,LocalDate.from(LocalDateTime.now()));
+			return new MsgInfo(MsgInfo.ERROR_CODE,"用户不存在...",null,LocalDateTime.now());
 		}
 		if (!user.getPwd().equals(userInfo.getPwd())){
-			return new MsgInfo(MsgInfo.ERROR_CODE,"密码不正确...",null,LocalDate.from(LocalDateTime.now()));
+			return new MsgInfo(MsgInfo.ERROR_CODE,"密码不正确...",null,LocalDateTime.now());
 		}
 		HttpSession session = request.getSession();
 		System.out.println(user);
@@ -61,7 +61,7 @@ public class UserLoginController {
 //		session.setAttribute("pwd:",user.getPwd());
 //		session.setAttribute("email:",user.getEmail());
 		System.out.println("====================>>>>>"+session.getAttribute("user"));
-		return new MsgInfo(MsgInfo.SUCCESS_CODE,"登录成功...",user,LocalDate.from(LocalDateTime.now()));
+		return new MsgInfo(MsgInfo.SUCCESS_CODE,"登录成功...",user,LocalDateTime.now());
 	}
 
 }

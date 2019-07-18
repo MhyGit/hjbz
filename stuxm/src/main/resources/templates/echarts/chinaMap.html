@@ -27,17 +27,20 @@
             <span class="from_span">开始时间:<input type="date" name="sssj" value="2019-01-01"/></span>
             <span class="from_span">结束时间:<input type="date" name="jssj" value="2019-07-01"/></span>
             <span class="from_span">关系类型:
-                <select>
+                <select name = "gxlx">
                     <option value ="1">购进</option>
                     <option value ="0">销售</option>
                 </select>
             </span>
+            <span class="from_span"><button type="button" id="form_button">查询</button></span>
         </form>
     </div>
     <!--存储地图的容器-->
     <div id="myMap" style="width: 900px; height: 700px; border: 1px solid red; margin: 0 auto;"></div>
     <script type="text/javascript">
-
+        $("#form_button").click(function () {
+            screach();
+        });
     </script>
 </body>
 </html>
