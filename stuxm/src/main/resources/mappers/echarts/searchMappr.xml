@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hjbz.stuxm.module.echarts.dao.SearchMapper">
+
+	<!--按条件查询数据-->
+	<select id="findAllData" parameterType="com.hjbz.stuxm.module.echarts.entity.Paramter" resultType="com.hjbz.stuxm.module.echarts.entity.Qsmyfx">
+		select
+			distinct
+			jysf,
+			sjdm,
+			sum(swgjje) swgjje,
+			sum(swxsje) swxsje,
+			sum(nsc) nsc
+		from dw_fact_qsmyfx
+		where date_key between #{ssqq} and #{ssqz}
+		group by jysf,sjdm
+	</select>
+
+
+</mapper>
