@@ -28,6 +28,7 @@ function screach() {
         qsmygxfxMap(dataArray);
     });
 }
+
 /**
  * 绘制地图
  */
@@ -83,7 +84,6 @@ function qsmygxfxMap() {
 
         });
         console.log(datas);
-
 
         /*作图*/
         var option = {
@@ -170,8 +170,8 @@ function qsmygxfxMap() {
              *  视觉元素可以是：symbol: 图元的图形类别。symbolSize: 图元的大小。color: 图元的颜色。
              */
             visualMap: {
-                min: 100, //指定 visualMapContinuous 组件的允许的最小值
-                max: 30, //指定 visualMapContinuous 组件的允许的最大值
+                min: 30, //指定 visualMapContinuous 组件的允许的最小值
+                max: 170, //指定 visualMapContinuous 组件的允许的最大值
                 realtime: false,   //拖拽时，是否实时更新
                 calculable: true,  //是否显示拖拽用的手柄（手柄能拖拽调整选中范围）
                 inRange: { //定义 在选中范围中 的视觉元素

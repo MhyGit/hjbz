@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hjbz.stuxm.module.mongodb.dao.QueryMapper">
+
+	<!-- 根据省份代码查询省份-->
+	<select id="findProvinceByProvinceCode" parameterType="java.lang.String" resultType="com.hjbz.stuxm.module.mongodb.entity.Province">
+		select
+			r.id provinceId,
+			r.name,
+			r.referred,
+			r.code,
+			r.region_name regionName,
+			r.region_code regionCode,
+			r.country_name countryName,
+			r.country_code countryCode,
+			r.`describe`,
+			r.country_referred_name countryReferredName
+		from hjbz_province r
+		where r.code = #{provinceCode}
+	</select>
+
+	<!-- 根据省份代码查询下辖市-->
+	<select id="findCityByProvinceCode" parameterType="java.lang.String" resultType="com.hjbz.stuxm.module.mongodb.entity.City">
+		select
+			t.id cityId,
+			t.name,
+			t.referred,
+			t.code,
+			t.postal_code postalCode,
+			t.license_plate licensePlate,
+			t.telephone_area_code telephoneAreaCode,
+			t.province_code provinceCode,
+			t.province_name provinceName,
+			t.province_referred provinceReferred,
+			t.region_name regionName,
+			t.region_code regionCode,
+			t.country_referred_name countryReferredName,
+			t.country_code countryCode
+		from hjbz_city t
+		where t.province_code = #{provinceCode}
+	</select>
+
+	<!-- 根据市代码查询下辖县-->
+	<select id="findCountyByCityCode" parameterType="java.lang.String" resultType="com.hjbz.stuxm.module.mongodb.entity.County">
+		select
+			t.id countyId,
+			t.name,
+			t.code,
+			t.city_code cityCode,
+			t.city_name cityName,
+			t.province_name provinceName,
+			t.province_code provinceCode,
+			t.towns,
+			t.`describe`
+		from hjbz_county t
+		where t.city_code = #{cityCode}
+	</select>
+
+
+
+
+
+</mapper>
